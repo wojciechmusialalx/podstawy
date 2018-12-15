@@ -1,4 +1,4 @@
-package _2_typy;
+package _2_typy_danych;
 
 
 import java.util.Scanner;
@@ -24,8 +24,8 @@ public class TypyObiektowe {
             System.out.println("Dlugie slowo");
         }
 
-//        boolean czyKonczySieNaA = imie.endsWith("a") || imie.endsWith("A");
-        boolean czyKonczySieNaA = imie.toLowerCase().endsWith("a");
+        boolean czyKonczySieNaA = imie.endsWith("a") || imie.endsWith("A");
+//        boolean czyKonczySieNaA = imie.toLowerCase().endsWith("a");
 
         if (czyKonczySieNaA) {
             if (imie.equalsIgnoreCase("Kuba")) {
