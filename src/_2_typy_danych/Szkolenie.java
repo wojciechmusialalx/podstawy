@@ -8,6 +8,7 @@ public class Szkolenie {
     int liczbaUczestnikow;
     String nazwa;
     LocalDate data;
+    Adres adres;
 
     // 1. tworzenie nowego obiektu
     // budowa konstruktora = [public/private] [nazwa] [(lista_paramaterow)]
@@ -19,12 +20,13 @@ public class Szkolenie {
 
     // kontruktor parametryczny
     public Szkolenie(String nazwa, int liczbaUczestnikow,
-                     double cena, LocalDate data) {
+                     double cena, LocalDate data, Adres adres) {
         System.out.println("Wykonal sie kontruktor parametryczny");
         this.nazwa = nazwa;
         this.liczbaUczestnikow = liczbaUczestnikow;
         this.cena = cena;
         this.data = data;
+        this.adres = adres;
     }
 
     // 2. wypisanie informacji o obiekcie
@@ -36,6 +38,7 @@ public class Szkolenie {
         System.out.printf("Cena: %.2f PLN\n", this.cena);
         System.out.println("Liczba uczestnikow: " + this.liczbaUczestnikow);
         System.out.println("Data: " + this.data);
+        adres.wyswietl();
         System.out.println();
     }
 
