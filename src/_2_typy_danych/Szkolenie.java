@@ -1,10 +1,12 @@
 package _2_typy_danych;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.time.LocalDate;
 
 public class Szkolenie {
 
-    double cena;
+    BigDecimal cena;
     int liczbaUczestnikow;
     String nazwa;
     LocalDate data;
@@ -20,7 +22,7 @@ public class Szkolenie {
 
     // kontruktor parametryczny
     public Szkolenie(String nazwa, int liczbaUczestnikow,
-                     double cena, LocalDate data, Adres adres) {
+                     BigDecimal cena, LocalDate data, Adres adres) {
         System.out.println("Wykonal sie kontruktor parametryczny");
         this.nazwa = nazwa;
         this.liczbaUczestnikow = liczbaUczestnikow;
@@ -40,8 +42,21 @@ public class Szkolenie {
         System.out.println("Data: " + this.data);
         adres.wyswietl();
         System.out.println();
+
     }
 
+    public BigDecimal obliczPrzychodBrutto() {
+//        double przychod = this.liczbaUczestnikow * this.cena;
+//        return przychod;
 
+        BigDecimal liczbaUczestnikowBD = BigDecimal.valueOf(liczbaUczestnikow);
+        return cena.multiply(liczbaUczestnikowBD);
 
+//        return this.liczbaUczestnikow * this.cena;
+    }
+
+    public BigDecimal obliczPrzychodNetto() {
+        BigDecimal vat = BigDecimal.ONE.add(StaleAplikacji.STAWKA_VAT);
+        return obliczPrzychodBrutto().divide(vat, 2, RoundingMode.HALF_UP);
+    }
 }
