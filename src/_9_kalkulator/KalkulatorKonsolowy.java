@@ -1,5 +1,6 @@
 package _9_kalkulator;
 
+import java.util.Locale;
 import java.util.Scanner;
 
 public class KalkulatorKonsolowy {
@@ -11,6 +12,7 @@ public class KalkulatorKonsolowy {
         System.out.println();
 
         Scanner wejscie = new Scanner(System.in);
+        wejscie.useLocale(Locale.US);
         while(true) {
             System.out.print("> ");
             try {
@@ -18,7 +20,22 @@ public class KalkulatorKonsolowy {
                 String operacja = wejscie.next();
                 double arg2 = wejscie.nextDouble();
 
-                // TODO
+                if("+".equals(operacja)) {
+                    double wynik = arg1 + arg2;
+                    System.out.println("    wynik: " + wynik);
+                } else if("-".equals(operacja)) {
+                    double wynik = arg1 - arg2;
+                    System.out.println("    wynik: " + wynik);
+                } else if("*".equals(operacja)) {
+                    double wynik = arg1 * arg2;
+                    System.out.println("    wynik: " + wynik);
+                } else if("/".equals(operacja)) {
+                    double wynik = arg1 / arg2;
+                    System.out.println("    wynik: " + wynik);
+                } else {
+                    System.out.println("Nie ma takiej operacji: " + operacja);
+                }
+
 
             } catch(Exception e) {
                 break;
