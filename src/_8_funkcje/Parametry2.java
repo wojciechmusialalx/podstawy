@@ -32,5 +32,5 @@ public class Parametry2 {
     * wiele klas tworzonych przez świadomych programistów (istotna rola modyfikatora final).
 
    Oczywiście niektóre klasy powinny być mutowalne, bo inaczej nie miałyby sensu.
-   Przykłady: StringBuilder, AtomicInteger, większość klas związanych z wejściem/wyjściem, np. Scanner.
+   Przykłady: StringBuilder, AtomicInteger, ArrayList i inne kolekcje, większość klas związanych z wejściem/wyjściem, np. Scanner.
 */
